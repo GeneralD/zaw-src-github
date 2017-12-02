@@ -8,16 +8,15 @@ function zaw-src-ghs() {
     # check user token
     if [[ $ZAW_GITHUB_TOKEN ]]; then
         # token allows more complex accesses
-        candidates=(`ghs -u $ZAW_GITHUB_USER -t $ZAW_GITHUB_TOKEN | awk '{ print $1 }'`)
+        local l=`ghs -u $ZAW_GITHUB_USER -t $ZAW_GITHUB_TOKEN | awk '{ print $1 }' | sort`
     else
-        candidates=(`ghs -u $ZAW_GITHUB_USER | awk '{ print $1 }'`)
+        local l=`ghs -u $ZAW_GITHUB_USER | awk '{ print $1 }' | sort`
     fi
-    if which map 1>/dev/null; then # <- zsh-functional plugin is required
-        # nerd fonts
-        local space=$'\uf116'
-        local github=$'\uf09b'
-        cand_descriptions=(`map '$github$space$1' $candidates`)
-    fi
+    candidates=(`echo $l`)
+    # nerd fonts
+    local space=$'\uf116'
+    local github=$'\uf09b'
+    cand_descriptions=(`echo $l | sed "s/^/$github$space/g"`)
 
     if which ghq 1>/dev/null; then
         actions=('zaw-src-ghs-ghq')
