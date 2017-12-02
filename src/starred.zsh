@@ -5,13 +5,14 @@ function zaw-src-starred() {
     if ! which github-list-starred 1>/dev/null; then
         go get github.com/motemen/github-list-starred
     fi
-
-    candidates=(`github-list-starred $ZAW_GITHUB_USER 2>/dev/null | grep https://`)
+    
+    local l=`github-list-starred $ZAW_GITHUB_USER 2>/dev/null | grep https://`
+    candidates=(`echo $l`)
     if which map 1>/dev/null; then # <- zsh-functional plugin is required
         # nerd fonts
         local space=$'\uf116'
         local github=$'\uf09b'
-        cand_descriptions=(`map '${1:gs/https:\/\/github.com\//${github}${space}}' $candidates`)
+        cand_descriptions=(`echo $l | sed "s/https:\/\/github.com\//$github$space/g"`)
     fi
 
     if which ghq 1>/dev/null; then
