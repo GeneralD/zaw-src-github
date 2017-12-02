@@ -2,7 +2,7 @@
 
 Optional sources of [zaw](https://github.com/zsh-users/zaw) for Github:
 
-- ghs
+- github
 
 It shows list of your repos on Github and clones repo you choose.
 
@@ -17,13 +17,12 @@ If you are using zplug, just add the code below in your .zshrc.
 ```zsh
 zplug "zsh-users/zaw"
 zplug "GeneralD/zaw-src-github", on:zsh-users/zaw, defer:2
-zplug "Tarrasch/zsh-functional"
 ```
 
 For oh-my-zsh, clone this repo into ~/.oh-my-zsh/custom/plugins and add plugin as below.
 
 ```zsh
-plugins+=(zaw zaw-src-github zsh-functional)
+plugins+=(zaw zaw-src-github)
 ```
 
 ## Customize
@@ -47,11 +46,13 @@ ZAW_GITHUB_TOKEN=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ## Dependencies
 
 - jq
+- go
 
 If you are using macOS, you can install with,
 
 ```sh
 brew install jq
+brew install go
 ```
 
 - any nerd-font
