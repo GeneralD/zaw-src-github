@@ -44,4 +44,5 @@ function zaw-src-ghs-clone() {
     zle accept-line
 }
 
-zaw-register-src -n ghs zaw-src-ghs
+# zaw-register-src -n ghs zaw-src-ghs
+zaw-register-src -n github zaw-src-ghs
