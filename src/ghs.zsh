@@ -23,8 +23,8 @@ function zaw-src-ghs() {
         act_descriptions=('ghq get')
     fi
 
-    actions+=('zaw-src-ghs-clone' 'zaw-callback-append-to-buffer' 'zaw-callback-replace-buffer')
-    act_descriptions+=('git clone' 'append to edit buffer' 'replace edit buffer')
+    actions+=('zaw-src-ghs-clone' 'zaw-src-ghs-browse' 'zaw-callback-append-to-buffer' 'zaw-callback-replace-buffer')
+    act_descriptions+=('git clone' 'browse' 'append to edit buffer' 'replace edit buffer')
 
     if [[ ! $ZAW_GITHUB_USER ]]; then
         echo "\033[0;33mDefine ZAW_GITHUB_USER at your zshrc!"
@@ -40,7 +40,12 @@ function zaw-src-ghs-ghq() {
 }
 
 function zaw-src-ghs-clone() {
-    BUFFER="git clone ${(j:; :)@}"
+    BUFFER="git clone https://github.com/${(j:; :)@}"
+    zle accept-line
+}
+
+function zaw-src-ghs-browse() {
+    BUFFER="open https://github.com/${(j:; :)@}"
     zle accept-line
 }
 
