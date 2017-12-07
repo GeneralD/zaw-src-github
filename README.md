@@ -65,7 +65,3 @@ brew cask search nerd-font
 ```
 
 Then, install and set any nerd-font to your terminal application.
-
-## Licence
-
-DTFPL
