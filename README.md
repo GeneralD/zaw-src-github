@@ -1,4 +1,4 @@
-# zaw-src-unity-github
+# zaw-src-github
 
 Optional sources of [zaw](https://github.com/zsh-users/zaw) for Github:
 
