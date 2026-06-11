@@ -1,5 +1,9 @@
 # zaw-src-github
 
+![shell](https://img.shields.io/badge/shell-zsh-blue) ![plugin](https://img.shields.io/badge/plugin-zaw%20source-blue) ![requires](https://img.shields.io/badge/requires-jq%20%7C%20go-yellow) ![license](https://img.shields.io/badge/license-Apache--2.0-green)
+
+![zaw-src-github hero banner](assets/hero.jpg)
+
 Optional sources of [zaw](https://github.com/zsh-users/zaw) for Github:
 
 - github
